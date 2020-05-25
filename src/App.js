@@ -16,7 +16,8 @@ function App() {
             // render();
         });
 }
-doFetch();
+
+useEffect(doFetch, [selectedRegionTitle]);
 
   return (
     <div className="App">
