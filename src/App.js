@@ -5,20 +5,26 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>
+            <h1>Currency Exchange Rates</h1>
+            <h2>Base Currency: 1 EURO</h2>
+        </header>
+
+        <div class="Container">
+            <div class="Graph">
+                <div class="Graph-select">
+                    <select onchange="changeRegion()" id="exchange-rate-region">
+                        <option>Europe</option>
+                        <option>Asia</option>
+                        <option>North America</option>
+                        <option>South America</option>
+                        <option>Africa/Oceania</option>
+                    </select>
+                </div>
+                <div class="Graph-text" id="country-rate"></div>
+                <div class="Graph-content" id="bar-chart"></div>
+            </div>
+        </div>
     </div>
   );
 }
