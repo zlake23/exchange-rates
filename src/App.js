@@ -51,7 +51,7 @@ useEffect(doFetch, [selectedRegionTitle]);
                     rates
                     .filter(rate => selectedRegion[selectedRegionTitle].includes(rate[0]))
                     .map(rate => (
-                    <div className="Graph-text" key={rate[0]} style={{width: (1/rate[1] * 100) + '%'}}>
+                    <div className="Graph-text" key={rate[0]}>
                       {rate[0]}, {rate[1]}
                     </div>
                      
