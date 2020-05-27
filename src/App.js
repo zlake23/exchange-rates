@@ -17,10 +17,14 @@ function App() {
         .then(response => response.json())
         .then(data => {
           setRates(Object.entries(data.rates));
-
-
         });
   }
+
+  // function updateRegionAndTitle() {
+  //   setSelectedRegionTitle();
+  //   setSelectedRegion(selectedRegionTitle);
+
+  // }
 
 useEffect(doFetch, [selectedRegionTitle]);
 
@@ -34,7 +38,7 @@ useEffect(doFetch, [selectedRegionTitle]);
         <div className="Container">
             <div className="Graph">
                 <div className="Graph-select">
-                    <select onChange={event => setSelectedRegionTitle(event.target.value).then(setSelectedRegion(selectedRegionTitle))}>
+                    <select onChange={event => setSelectedRegionTitle(event.target.value)}>
                         <option>Europe</option>
                         <option>Asia</option>
                         <option>North America</option>
@@ -42,14 +46,25 @@ useEffect(doFetch, [selectedRegionTitle]);
                         <option>Africa/Oceania</option>
                     </select>
                 </div>
-                <div className="Graph-text"></div>
+                <div className="Graph-text">
+                  {
+                    rates
+                    .filter(rate => selectedRegion[selectedRegionTitle].includes(rate[0]))
+                    .map(rate => (
+                    <div className="Graph-text" key={rate[0]} style={{width: (1/rate[1] * 100) + '%'}}>
+                      {rate[0]}, {rate[1]}
+                    </div>
+                     
+                    ))
+                  }
+                </div>
                 <div className="Graph-content">
                   {
                     rates
                     .filter(rate => selectedRegion[selectedRegionTitle].includes(rate[0]))
                     .map(rate => (
                     <div className="Graph-bar" key={rate[0]} style={{width: (1/rate[1] * 100) + '%'}}>
-                      {rate[0]}, {rate[1]}
+                      
                     </div>
                      
                     ))
