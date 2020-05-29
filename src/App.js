@@ -20,12 +20,6 @@ function App() {
         });
   }
 
-  // function updateRegionAndTitle() {
-  //   setSelectedRegionTitle();
-  //   setSelectedRegion(selectedRegionTitle);
-
-  // }
-
 useEffect(doFetch, [selectedRegionTitle]);
 
   return (
@@ -54,7 +48,6 @@ useEffect(doFetch, [selectedRegionTitle]);
                     <div className="Graph-text" key={rate[0]}>
                       {rate[0]}, {rate[1]}
                     </div>
-                     
                     ))
                   }
                 </div>
@@ -63,10 +56,7 @@ useEffect(doFetch, [selectedRegionTitle]);
                     rates
                     .filter(rate => selectedRegion[selectedRegionTitle].includes(rate[0]))
                     .map(rate => (
-                    <div className="Graph-bar" key={rate[0]} style={{width: (1/rate[1] * 100) + '%'}}>
-                      
-                    </div>
-                     
+                    <div className="Graph-bar" key={rate[0]} style={{width: (1/rate[1] * 100) + '%'}}></div>  
                     ))
                   }
                 </div>
