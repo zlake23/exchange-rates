@@ -13,4 +13,4 @@ This widget allows a user to check exchange rates of various countries in compar
 The data is displayed with a bar chart, allowing the user to select specific regions to view. The chart plots the bars in relation to the strength of the foreign currency to the EURO.
 
 ### Demo
-![Live Demo](exchange_rates_widget.png)
+![Live Demo](exchange_rates.png)
