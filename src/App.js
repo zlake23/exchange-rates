@@ -27,7 +27,7 @@ useEffect(doFetch, [selectedRegionTitle, selectedBase]);
     <div className="App">
       <header>
             <h1>Currency Exchange Rates</h1>
-            <h2>Base Currency: 1 EURO</h2>
+            <h2>Base Currency: 1 {selectedBase}</h2>
         </header>
 
         <div className="Container">
