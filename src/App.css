@@ -33,7 +33,7 @@ header {
   grid-column: 1 / span 3;
   grid-row: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   margin-top: 15px;
   
