@@ -51,7 +51,7 @@ useEffect(doFetch, [selectedRegionTitle, selectedBase]);
                         <option>USD</option>
                         <option>CAD</option>
                         <option>GBP</option>
-                        <option>KRW</option>
+                        <option>AUD</option>
                     </select>
                     </div>
                 </div>
